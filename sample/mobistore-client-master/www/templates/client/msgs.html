@@ -1,0 +1,18 @@
+<ion-view id="msgs" view-title="我的消息">
+
+  <ion-nav-buttons side="right">
+      <span class="button button-small button-clear " ng-click="add()">
+      	<i class="icon ion-ios-plus-empty"></i>
+      </span>
+   </ion-nav-buttons>
+	
+  <ion-content class="has-header">
+		<ion-list>
+	        <ion-item ng-repeat="item in msgs">
+	          <h2 class="text-big text-color-light-grey" >{{item.title}}</h2>
+	          <p class="text-thin text-color-light-grey">{{item.descr}}</p>
+	        </ion-item>
+	   </ion-list>
+  </ion-content>
+	
+</ion-view>

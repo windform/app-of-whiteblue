@@ -1,0 +1,65 @@
+<ion-view id="shoppingcart" view-title="购物车">
+  <ion-content class="has-header content">
+  	<div class="msg" ng-if="isEmpty">
+		暂未添加商品
+	</div>
+  	<div ng-if="!isEmpty">
+		<div class="summary">
+			<div class="row content">
+			  <div class="col col-33 left">总额</div>
+			  <div class="col col-67 right">{{cart.totalAmount | currency:"￥"}}</div>
+			</div>
+			<div class="row content">
+			  <div class="col col-33 left">商品</div>
+			  <div class="col col-67 right">{{cart.amount | currency:"￥"}}</div>
+			</div>
+			<div class="row content">
+			  <div class="col col-33 left">运费</div>
+			  <div class="col col-67 right">{{cart.freight | currency:"￥"}}</div>
+			</div>
+		</div>
+	
+		<div class="detail">
+			<ion-list class="list-with-price">
+		        <ion-item ng-repeat="item in cart.items" class="item-thumbnail-left">
+		          <img ng-click="showProdcut(item.productId)" ng-src="{{item.image | imgPath}}">
+		          
+		          <h2 ng-click="showProdcut(item.productId)" class="text-big text-color-light-grey" >{{item.name}}</h2>
+		          <p class="text-thin text-color-light-grey">{{item.unitPrice | currency:"￥"}}</p>
+		          <div class="clear-both"></div>
+		          <div class="my-box text-thin text-color-light-grey">
+					<div class="line">
+						<span class="left">
+							<span class="my-label">
+								数量
+							</span>
+							<span class="my-input">
+								<input type="text" ng-model="item.qty" ng-change="qtyChange(item)">
+							</span>
+						</span>
+						
+						<span class="right" ng-click="remove(item)">
+							<span class="icon ion-ios-trash-outline"></span>
+						</span>
+					</div>
+				  </div>
+		        </ion-item>
+		   </ion-list>
+		</div>
+   </div>
+  </ion-content>
+  
+	<div ng-if="!isEmpty" class="bar bar-footer has-tab-bar-footer">
+	   	<div class="row bottom-buttons">
+	   		<div class="buttons">
+				<button class="button button-light left half" ng-click="checkout()">
+				  结算
+				</button>
+				<button class="button button-light right half" ng-click="clear()">
+				  清空
+				</button>
+			</div>
+		</div>
+	</div>
+	
+</ion-view>
