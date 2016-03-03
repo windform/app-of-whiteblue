@@ -42,3 +42,6 @@
 .main_01::-webkit-scroll-bar{
 	display:none;
 	}
+a.tab-item{
+	background-color: red;
+}

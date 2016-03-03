@@ -1,0 +1,79 @@
+<!doctype html>
+<html ng-app="myapp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link type="text/css" rel="stylesheet" href="./css/ionic.css"/>
+    <link type="text/css"  rel="stylesheet" href="./css/style.css"/>
+    <script type="text/javascript" src="./script/api.js"></script>
+    <script src="./js/angular.js" type="text/javascript"></script>
+    <script src="./js/angular-route.js" type="text/javascript"></script>
+    <script src="./js/main.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="bar bar-header bar-ldcolor bar-fixed">
+      <button class="button icon ion-android-menu button-clear"></button>
+      <h1 class="title">日志</h1>
+      <button class="button icon ion-android-more-vertical button-clear"></button>
+    </div>
+    <div class="main_01">
+    <div class="list list-scroll" ng-controller="maincontent">
+            <a class="item item-thumbnail-left" href="#" ng-repeat="data in maindata">
+              <img src="{{data.imageUrl}}">
+              <h2>{{data.name}}</h2>
+              <p class="item_p">{{data.snippet}}</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="tabs tabs-icon-top footer-fixed">
+      <a class="tab-item" href="index.html">
+        <i class="icon ion-home"></i>
+        主页
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-android-create"></i>
+        日志
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-social-nodejs"></i>
+        前端
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-android-image"></i>
+        视觉
+      </a>
+    </div>
+</body>
+<script type="text/javascript">
+//  apiready = function(){
+//		console.log("Hello APICloud");
+//
+//      var header = $api.byId('header');
+//      //适配iOS 7+，Android 4.4+状态栏
+//      $api.fixStatusBar(header);
+//
+//      var headerPos = $api.offset(header);
+//      var main = $api.byId('main');
+//      var mainPos = $api.offset(main);
+//      api.openFrame({
+//          name: 'main',
+//          url: 'html/main.html',
+//          bounces: true,
+//          rect: {
+//              x: 0,
+//              y: headerPos.h,
+//              w: 'auto',
+//              h: mainPos.h
+//          }
+//      });
+//
+//      var year = $api.byId('year');
+//      year.innerHTML = new Date().getFullYear();
+//
+//  };
+</script>
+</html>

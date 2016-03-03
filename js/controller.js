@@ -1,9 +1,9 @@
-var viewcontrollers=angular.module('viewcontrollers',[]);
-viewcontrollers.controller('maincontent',['$scope','$http',function($scope,$http){
-	$http.get('../AngularJs/data/phones.json').success(function(data){
+var myapp=angular.module('myapp',[]);
+myapp.controller('maincontent',['$scope',function($scope){
+	/*$http.get('../AngularJs/data/phones.json').success(function(data){
 		$scope.maindata=data;
-		})
-	/*$scope.maindata=[{
+		})*/
+	$scope.maindata=[{
 		"imageUrl":"http://www.runoob.com/try/demo_source/blue-album.jpg",
 		"title":"网站运营的变局风云",
 		"description":"但是在移动互联网、大数据潮流奔腾而来的2015年，内容为王已经动摇[...]"
@@ -19,6 +19,6 @@ viewcontrollers.controller('maincontent',['$scope','$http',function($scope,$http
 		"imageUrl":"http://www.runoob.com/try/demo_source/license-to-ill.jpg",
 		"title":"如何避免开发一款失败的产品（中篇）",
 		"description":"在互联网行业，我们见过很多充分满足用户需求但没法赚钱、没法持续发[...]"
-		}]*/
+		}]
 		
 	}])
